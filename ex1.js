@@ -15,12 +15,13 @@ const shortenUrl = () => {
   xhr.responseType = 'json';
   xhr.onreadystatechange = () => {
     if(xhr.readyState === XMLHttpRequest.DONE) {
-      renderRawResponse(xhr.response);
+      renderResponse(xhr.response);
     }
   };
   xhr.open('POST', url);
   xhr.setRequestHeader('Content-type', 'application/json');
-  xhr.setRequestHeader('apikey', apikey);//여기부터
+  xhr.setRequestHeader('apikey', apiKey);
+  xhr.send(data);
 }
 
 
