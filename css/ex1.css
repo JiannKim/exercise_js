@@ -15,7 +15,7 @@ body {
     background-color: rgb(145, 243, 227);
 }
 
-.content {
+.content, #form {
     margin: 30px;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@ body {
     background-color: #fff;
 }
 
-.content > button {
+#shorten {
     all: unset;
     width: 150px;
     margin: 0 auto;
@@ -47,7 +47,7 @@ body {
     cursor: pointer;
 }
 
-.content > button:hover {
+#shorten:hover {
     background-color: rgba(251, 255, 17, 0.76);
 }
 
