@@ -12,12 +12,14 @@
     <body>
         <div class="wrapper">
             <header>
-                <h1>Hi! Write your URL.</h1>
+                <h1>Hi! Enter your URL.</h1>
             </header>
             <aticle class="content">
-                <input type="text" placeholder="enter..." class="url__writer"/>
-                <button>B0000M!</button>
-                <input type="text" class="url__shorten" />
+                <input type="text" placeholder="enter..." id="input" class="url__writer"/>
+                <button id="shorten" onclick="displayShortUrl()">B0000M!</button>
+                <div id="responseField" class="url__shorten">
+
+                </div>
             </aticle>
             <footer class="url__footer">
                 지안이가 만들구이써엽👶

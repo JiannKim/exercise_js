@@ -30,6 +30,9 @@ body {
 
 .url__shorten {
     height: 100px;
+    width: 300px;
+    border: 1px solid lightgray;
+    background-color: #fff;
 }
 
 .content > button {
@@ -41,6 +44,7 @@ body {
     border-radius: 10px;
     font-size: 1.5em;
     color: rgb(223, 61, 21);
+    cursor: pointer;
 }
 
 .content > button:hover {
