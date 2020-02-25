@@ -6,8 +6,14 @@
     <meta charset="utf-8" lang="ko"/>
     <title>URL Shorten</title>
     <link rel="stylesheet" href="css/ex1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- <script>
+        function btn() {
+            alert('test');
+        }
+    </script> -->
 </haed>
     <body>
         <div class="wrapper">
@@ -16,8 +22,8 @@
             </header>
             <aticle class="content">
                 <form id="form" autocomplete="off">
-                    <input type="text" placeholder="enter..." id="input" class="url__writer" vlaue/>
-                    <button id="shorten" onclick="shortenUrl()">B0000M!</button>
+                    <input type="text" placeholder="enter..." id="input" class="url__writer" value/>
+                    <button id="shorten">B0000M!</button>
                 </form>
                 <div id="responseField" class="url__shorten">
 
@@ -26,6 +32,7 @@
             <footer class="url__footer">
                 지안이가 만들구이써엽👶
             </footer>
+            <script src="ex1.js"></script>
         </div>
     </body>
 </html>

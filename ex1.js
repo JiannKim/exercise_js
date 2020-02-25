@@ -26,6 +26,7 @@ const shortenUrl = () => {
 
 
 // Clear page and call AJAX functions
+// const event = 'http://www.paganbikes.co.kr/admin/login/index?return_url=%2Fadmin%2F%3F%2Fadmin';
 const displayShortUrl = (event) => {
   event.preventDefault();
   while(responseField.firstChild){
@@ -35,3 +36,31 @@ const displayShortUrl = (event) => {
 }
 
 shortenButton.addEventListener('click', displayShortUrl);
+
+function btn() {
+  alert('test');
+}
+
+//helper functions
+// Manipulates responseField to render a formatted and appropriate message
+const renderResponse = (res) => {
+  // Displays either message depending on results
+  if(res.errors){
+    responseField.innerHTML = "<p>Sorry, couldn't format your URL.</p><p>Try again.</p>";
+  } else {  
+    responseField.innerHTML = `<p>Your shortened url is: </p><p> ${res.shortUrl} </p>`;
+  }
+}
+
+// Manipulates responseField to render an unformatted response
+const renderRawResponse = (res) => {
+  // Displays either message depending on results
+  if(res.errors){  
+    responseField.innerHTML = "<p>Sorry, couldn't format your URL.</p><p>Try again.</p>";
+  } else {
+    // Adds line breaks for JSON
+    let structuredRes = JSON.stringify(res).replace(/,/g, ", \n");
+    structuredRes = `<pre>${structuredRes}</pre>`;
+    responseField.innerHTML = `${structuredRes}`;
+  }
+}
