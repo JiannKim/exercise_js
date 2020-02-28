@@ -12,7 +12,8 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: rgb(145, 243, 227);
+    /* background-color: rgb(145, 243, 227); */
+    background-image: url(img/jrd-2.png);
 }
 
 .content, #form {
