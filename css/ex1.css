@@ -14,12 +14,13 @@ body {
     text-align: center;
     background-color: rgb(145, 243, 227);
 }
-.jrd {
-    /* z-index: 2; */
-    /* background-image: url(../img/jrd-1.png); */
-    width: 100px;
-    height: 100px;
-    border: 1px solid #999;
+.jrd img {
+    z-index: -1;
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    right: -5px;
+    bottom: 50px;
 
 }
 .content, #form {
