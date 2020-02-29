@@ -12,10 +12,16 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    /* background-color: rgb(145, 243, 227); */
-    background-image: url(img/jrd-2.png);
+    background-color: rgb(145, 243, 227);
 }
+.jrd {
+    /* z-index: 2; */
+    /* background-image: url(../img/jrd-1.png); */
+    width: 100px;
+    height: 100px;
+    border: 1px solid #999;
 
+}
 .content, #form {
     margin: 30px;
     display: flex;
