@@ -23,7 +23,17 @@ const shortenUrl = () => {
   xhr.setRequestHeader('apikey', apiKey);
   xhr.send(data);
 }
+// 붐버튼 마우스 오버 효과
+const p = document.querySelector('#shorten');
+p.onmouseover = mov;
+p.onmouseout = mot;
 
+function mov() {
+    p.innerHTML = 'B💥💥💥M!';
+}
+function mot() {
+    p.innerHTML = 'B💣💣💣M!';
+}
 
 // Clear page and call AJAX functions
 // const event = 'http://www.paganbikes.co.kr/admin/login/index?return_url=%2Fadmin%2F%3F%2Fadmin';
@@ -37,9 +47,6 @@ const displayShortUrl = (event) => {
 
 shortenButton.addEventListener('click', displayShortUrl);
 
-function btn() {
-  alert('test');
-}
 
 //helper functions
 // Manipulates responseField to render a formatted and appropriate message
