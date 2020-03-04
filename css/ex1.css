@@ -14,6 +14,10 @@ body {
     text-align: center;
     background-color: rgb(145, 243, 227);
 }
+h1 {
+    font-size: 3em;
+    color: blueviolet;
+}
 .jrd img {
     z-index: -1;
     width: 1000px;
@@ -47,15 +51,16 @@ body {
     all: unset;
     width: 150px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: blueviolet;
     padding: 15px;
     border-radius: 10px;
     font-size: 1.5em;
-    color: rgb(223, 61, 21);
+    color: rgba(251, 255, 17, 0.76);
     cursor: pointer;
 }
 
 #shorten:hover {
+    color: blueviolet;
     background-color: rgba(251, 255, 17, 0.76);
 }
 
