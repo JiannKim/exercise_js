@@ -20,8 +20,8 @@ h1 {
 }
 .jrd img {
     z-index: -1;
-    width: 1000px;
-    height: 1000px;
+    width: 500px;
+    height: 500px;
     position: fixed;
     right: -5px;
     bottom: 50px;
@@ -53,7 +53,7 @@ h1 {
     margin: 0 auto;
     background-color: blueviolet;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 1.5em;
     color: rgba(251, 255, 17, 0.76);
     cursor: pointer;
@@ -65,6 +65,10 @@ h1 {
     background-color: rgba(251, 255, 17, 0.76);
     font-weight: bold;
 }
+
+#shorten:active {
+    box-shadow: inset 0px 2px 8px -1px #c9c502;
+  }
 
 .url__footer {
     width: 100%;
