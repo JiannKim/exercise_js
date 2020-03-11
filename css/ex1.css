@@ -6,14 +6,20 @@
     font-family: 'Roboto Mono' ;
 }
 
+body, html {
+    height: 100%;
+}
+
 body {
     margin-top: -20px;
     padding-bottom: 250px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: rgb(145, 243, 227);
+    /* add */
+    display: -webkit-box;
+    display: flex;
+    background: #FFDC52;
 }
 h1 {
     font-size: 3em;
@@ -72,193 +78,183 @@ h1 {
     box-shadow: inset 0px 2px 8px -1px #c9c502;
   }
 
-  
-  body, html {
-    height: 100%;
-  }
-  
-  body {
-    display: -webkit-box;
-    display: flex;
-    background: #FFDC52;
-  }
-  
-  /* .button:hover {
+/* button efect add */
+/* .button:hover {
     background: #ec3257;
-  }
-  .button:active {
+}
+.button:active {
     box-shadow: inset 0px 2px 8px -1px #d7143b;
-  } */
-  
-  .fancy-button {
+} */
+
+.fancy-button {
     margin: auto;
     position: relative;
-  }
-  
-  .frills, .frills:after, .frills:before {
+}
+
+.frills, .frills:after, .frills:before {
     position: absolute;
     background: #eb1f48;
     border-radius: 5px;
     height: 10px;
-  }
-  
-  .frills:after, .frills:before {
+}
+
+.frills:after, .frills:before {
     content: "";
     display: block;
-  }
-  
-  .frills:before {
+}
+
+.frills:before {
     bottom: 45px;
-  }
-  
-  .frills:after {
+}
+
+.frills:after {
     top: 45px;
-  }
-  
-  .left-frills {
+}
+
+.left-frills {
     right: 199px;
     top: 28.5px;
-  }
-  .active .left-frills {
+}
+.active .left-frills {
     -webkit-animation: move-left 0.38s ease-out, width-to-zero 0.38s ease-out;
             animation: move-left 0.38s ease-out, width-to-zero 0.38s ease-out;
-  }
-  .left-frills:before, .left-frills:after {
+}
+.left-frills:before, .left-frills:after {
     left: 15px;
-  }
-  .active .left-frills:before {
+}
+.active .left-frills:before {
     -webkit-animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
             animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
-  }
-  .active .left-frills:after {
+}
+.active .left-frills:after {
     -webkit-animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
             animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
-  }
-  
-  .right-frills {
+}
+
+.right-frills {
     left: 199px;
     top: 28.5px;
-  }
-  .active .right-frills {
+}
+.active .right-frills {
     -webkit-animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
             animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
-  }
-  .right-frills:before, .right-frills:after {
+}
+.right-frills:before, .right-frills:after {
     right: 15px;
-  }
-  .active .right-frills:before {
+}
+.active .right-frills:before {
     -webkit-animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
             animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
-  }
-  .active .right-frills:after {
+}
+.active .right-frills:after {
     -webkit-animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
             animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
-  }
-  
-  .left-frills:before, .right-frills:after {
+}
+
+.left-frills:before, .right-frills:after {
     -webkit-transform: rotate(34deg);
             transform: rotate(34deg);
-  }
-  
-  .left-frills:after, .right-frills:before {
+}
+
+.left-frills:after, .right-frills:before {
     -webkit-transform: rotate(-34deg);
             transform: rotate(-34deg);
-  }
-  
-  @-webkit-keyframes move-left {
+}
+
+@-webkit-keyframes move-left {
     0% {
-      -webkit-transform: none;
-              transform: none;
+    -webkit-transform: none;
+            transform: none;
     }
     65% {
-      -webkit-transform: translateX(-80px);
-              transform: translateX(-80px);
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
     }
     100% {
-      -webkit-transform: translateX(-80px);
-              transform: translateX(-80px);
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
     }
-  }
-  
-  @keyframes move-left {
+}
+
+@keyframes move-left {
     0% {
-      -webkit-transform: none;
-              transform: none;
+    -webkit-transform: none;
+            transform: none;
     }
     65% {
-      -webkit-transform: translateX(-80px);
-              transform: translateX(-80px);
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
     }
     100% {
-      -webkit-transform: translateX(-80px);
-              transform: translateX(-80px);
+    -webkit-transform: translateX(-80px);
+            transform: translateX(-80px);
     }
-  }
-  @-webkit-keyframes move-right {
+}
+@-webkit-keyframes move-right {
     0% {
-      -webkit-transform: none;
-              transform: none;
+    -webkit-transform: none;
+            transform: none;
     }
     65% {
-      -webkit-transform: translateX(80px);
-              transform: translateX(80px);
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
     }
     100% {
-      -webkit-transform: translateX(80px);
-              transform: translateX(80px);
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
     }
-  }
-  @keyframes move-right {
+}
+@keyframes move-right {
     0% {
-      -webkit-transform: none;
-              transform: none;
+    -webkit-transform: none;
+            transform: none;
     }
     65% {
-      -webkit-transform: translateX(80px);
-              transform: translateX(80px);
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
     }
     100% {
-      -webkit-transform: translateX(80px);
-              transform: translateX(80px);
+    -webkit-transform: translateX(80px);
+            transform: translateX(80px);
     }
-  }
-  @-webkit-keyframes width-to-zero {
+}
+@-webkit-keyframes width-to-zero {
     0% {
-      width: 38px;
+    width: 38px;
     }
     100% {
-      width: 8px;
+    width: 8px;
     }
-  }
-  @keyframes width-to-zero {
+}
+@keyframes width-to-zero {
     0% {
-      width: 38px;
+    width: 38px;
     }
     100% {
-      width: 8px;
+    width: 8px;
     }
-  }
-  @-webkit-keyframes move-up {
+}
+@-webkit-keyframes move-up {
     100% {
-      bottom: 69.75px;
+    bottom: 69.75px;
     }
-  }
-  @keyframes move-up {
+}
+@keyframes move-up {
     100% {
-      bottom: 69.75px;
+    bottom: 69.75px;
     }
-  }
-  @-webkit-keyframes move-down {
+}
+@-webkit-keyframes move-down {
     100% {
-      top: 69.75px;
+    top: 69.75px;
     }
-  }
-  @keyframes move-down {
+}
+@keyframes move-down {
     100% {
-      top: 69.75px;
+    top: 69.75px;
     }
-  }
-  
+}
+
 
 
 .url__footer {
