@@ -23,6 +23,7 @@ const shortenUrl = () => {
   xhr.setRequestHeader('apikey', apiKey);
   xhr.send(data);
 }
+
 // 붐버튼 마우스 오버 효과
 const p = document.querySelector('#shorten');
 p.onmouseover = mov;
@@ -34,6 +35,16 @@ function mov() {
 function mot() {
     p.innerHTML = 'B💣💣💣M!';
 }
+
+// active efect
+$(function(){
+  $(".fancy-button").mousedown(function(){
+    $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+        $(this).removeClass('active');
+    })
+     $(this).addClass("active");
+  });
+});
 
 // Clear page and call AJAX functions
 // const event = 'http://www.paganbikes.co.kr/admin/login/index?return_url=%2Fadmin%2F%3F%2Fadmin';
