@@ -29,6 +29,7 @@ function saveToDos() {
 //web html에서 배열에 추가 될때마다 각각의 elements를 생성
 function paintToDo(text) {
     const li = document.createElement("li");
+    // const br = document.createElement("br");    //add to br element
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
     const newId = toDos.length + 1; //생성될때마다 Id값을 1씩 할당
