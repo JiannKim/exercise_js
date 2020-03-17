@@ -40,3 +40,9 @@ button {
     all: unset;
     cursor: pointer;
 }
+
+.js-weather {
+    color: rgb(255, 123, 0);
+    font-size: 1.5em;
+    text-align: center;
+}
