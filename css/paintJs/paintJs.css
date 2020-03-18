@@ -11,14 +11,37 @@ body {
     padding-top: 50px;
 }
 .canvas {
-    width: 700px;
-    height: 700px;
+    width: 650px;
+    height: 650px;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
 }
 .controls {
-    margin-top: 60px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.controls__btns {
+    margin-bottom: 10px;
+}
+.controls__btns button {
+    all: unset;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 0;
+    width: 70px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
+    border: 2px solid rgba(0, 0, 0, .2);
+    color: rgba(0, 0, 0, .7);
+    font-weight: 800;
+    font-size: 12px;
+}
+.controls__btns button:active {
+    transform: scale(.98);
 }
 .controls__colors {
     display: flex;
@@ -27,7 +50,33 @@ body {
     width: 50px;
     height: 50px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
-    border-radius: 25px;
-    margin: 10px;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 30px 10px;
     cursor: pointer;
+
+}
+
+/* range */
+.controls__range {
+    margin-bottom: 30px;
+}
+.controls__range input {
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    width: 200px;
+    height: 2px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
+}
+.controls__range input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color:#555;
+	width: 2.5em;
+	height: 1em;
+	border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
 }
