@@ -2,15 +2,26 @@ body {
     background-color: #333;
 }
 
-.js-title {
-    color: rgb(255, 123, 0);
-    font-size: 5rem;
+.js-title, .js-toDoForm {
+    text-align: center;
 }
 
+.js-title {
+    color: papayawhip;
+    font-size: 5rem;
+}
+.js-weather {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    margin: 10px;
+    color: papayawhip;
+    font-size: 1.5em;
+}
 input {
     padding: 10px;
     margin: 5px;
-    width: 300px;
+    width: 400px;
 }
 
 @keyframes fadeIn {
@@ -31,18 +42,18 @@ input {
     animation: fadeIn .4s linear;
 }
 
+.js-toDoList {
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+}
 li {
     color: beige;
     font-size: 2em;
+    list-style: none;
 }
 
 button {
     all: unset;
     cursor: pointer;
-}
-
-.js-weather {
-    color: rgb(255, 123, 0);
-    font-size: 1.5em;
-    text-align: center;
 }
