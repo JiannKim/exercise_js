@@ -68,7 +68,7 @@ body {
     background-color: lightgray;
     border: 1px solid lightgray;
     width: 200px;
-    height: 2px;
+    height: 3px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
 }
