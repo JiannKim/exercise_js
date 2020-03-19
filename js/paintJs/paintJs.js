@@ -1,5 +1,7 @@
 const canvas = document.getElementById("js-Canvas");
 const colors = document.getElementsByClassName("js-Color");
+const range = document.getElementById("js-Range");
+const mode = document.getElementById("js-Mode");
 //canvas 안에서 pixel에 접근하기위한 변수선언
 const ctx = canvas.getContext("2d");
 //적용될 픽셀(canvas) 사이즈
@@ -7,9 +9,10 @@ canvas.width = 700;
 canvas.height = 650;
 //canvas 안에서 픽셀을 다루기 위한
 ctx.strokeStyle = "#2c2c2c";
-ctx.lineWidth = 2.5;
+ctx.lineWidth = 5;
 
 let painting = false;
+let filling = false;
 
 function stopPainting() {
     painting = false;
@@ -33,9 +36,23 @@ function onMouseMove(event) {
 function handleColorClick(event) {
     const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color;
-    console.log(color);
 }
-
+//range조절시 brush굵기 반영위한 메소드
+function handleRangeChange(event) {
+    const size = event.target.value;
+    ctx.lineWidth = size;
+    console.log(event);
+}
+//brush mode is fill or paint toggle button
+function handleModeClick(event) {
+    if(filling === true) {
+        filling = false;
+        mode.innerText = "Fill";
+    } else {
+        filling = true;
+        mode.innerText = "PAINT"
+    }
+}
 if(canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
@@ -46,3 +63,11 @@ if(canvas) {
 Array.from(colors).forEach(color =>
     color.addEventListener("click", handleColorClick)
 );
+
+if(range) {
+    range.addEventListener("input", handleRangeChange);
+};
+//button(mode)에 연결
+if(mode) {
+    mode.addEventListener("click", handleModeClick);
+}
