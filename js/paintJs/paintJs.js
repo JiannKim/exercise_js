@@ -1,4 +1,5 @@
-const canvas = document.querySelector("#js-Canvas");
+const canvas = document.getElementById("js-Canvas");
+const colors = document.getElementsByClassName("js-Color");
 //canvas 안에서 pixel에 접근하기위한 변수선언
 const ctx = canvas.getContext("2d");
 //적용될 픽셀(canvas) 사이즈
@@ -28,14 +29,20 @@ function onMouseMove(event) {
         ctx.stroke();
     }
 }
-//mouse down canvas 이벤트 (마우스를 누르고 있는 상태)
-function onMouseDown(event) {
-    painting = true;
-    // console.log(event);
+//brush의 색상을 변경해주기 위한 메소드
+function handleColorClick(event) {
+    const color = event.target.style.backgroundColor;
+    ctx.strokeStyle = color;
+    console.log(color);
 }
+
 if(canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
 }
+//handleColorClick에 인수값을 할당해주기
+Array.from(colors).forEach(color =>
+    color.addEventListener("click", handleColorClick)
+);
