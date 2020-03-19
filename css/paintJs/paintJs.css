@@ -16,6 +16,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
+    cursor: pointer;
 }
 .controls {
     margin-top: 30px;
@@ -79,4 +80,8 @@ body {
 	height: 1em;
 	border-radius: 10px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(50, 50, 93, .11);
+}
+
+.controls__range input[type='range']::-webkit-slider-thumb:active {
+    transform: scale(.97);
 }
