@@ -2,6 +2,7 @@ const canvas = document.getElementById("js-Canvas");
 const colors = document.getElementsByClassName("js-Color");
 const range = document.getElementById("js-Range");
 const mode = document.getElementById("js-Mode");
+const saveBtn = document.getElementById("js-Save");
 
 //canvas 안에서 pixel에 접근하기위한 변수선언
 const ctx = canvas.getContext("2d");
@@ -13,12 +14,13 @@ const Canvas_Height = 650;
 //적용될 픽셀(canvas) 사이즈
 canvas.width = Canvas_Width;
 canvas.height = Canvas_Height;
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, Canvas_Width, Canvas_Height);
 //canvas 안에서 픽셀을 다루기 위한
 ctx.strokeStyle = Inition_Color;
 ctx.fillStyle = Inition_Color;
 ctx.lineWidth = 5;
-//fill mode
-ctx.fillStyle = "color";
+ctx.fillStyle = "color";    //fill mode
 
 let painting = false;
 let filling = false;
@@ -69,12 +71,27 @@ function handleCanvasClick(event) {
         ctx.fillRect(0, 0, Canvas_Width, Canvas_Height);
     } else {};
 }
+// Canvas not save
+// function handleRightClick(event) {
+//     event.preventDefault();
+// }
+//Image save for png 
+function handleSaveClick(event) {
+    const image = canvas.toDataURL();   //default .png
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "Create[🤘]";
+    link.click();
+}
+
 if(canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
+    // Canvas not save
+    // canvas.addEventListener("contextmenu", handleRightClick); 
 };
 //handleColorClick에 인수값을 할당해주기
 Array.from(colors).forEach(color =>
@@ -87,4 +104,8 @@ if(range) {
 //button(mode)에 연결
 if(mode) {
     mode.addEventListener("click", handleModeClick);
+};
+//Save button
+if(saveBtn) {
+    saveBtn.addEventListener("click", handleSaveClick);
 };
