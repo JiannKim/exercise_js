@@ -8,7 +8,7 @@ const saveBtn = document.getElementById("js-Save");
 const ctx = canvas.getContext("2d");
 //default value
 const Inition_Color = "#2c2c2c";
-const Canvas_Width = 700;  //적용될 픽셀(canvas) 사이즈
+const Canvas_Width = 900;  //적용될 픽셀(canvas) 사이즈
 const Canvas_Height = 650;
 
 //적용될 픽셀(canvas) 사이즈
