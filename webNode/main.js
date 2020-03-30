@@ -58,7 +58,7 @@ var app = http.createServer(function (request, response) {
                 <h2>${title}</h2>${description}`,
                 `<a href="/create">CREATE</a>
                 <a href="/update?id=${title}">UPDATE</a>
-                <form>
+                <form action="/delete_process" method="post" onsubmit="lalala">
                     <input type="hidden" name="id" value="${title}" />
                     <input type="submit" value="DELETE" />
                 </form>
@@ -132,6 +132,20 @@ var app = http.createServer(function (request, response) {
                 })
                 });
         })
+    } else if(pathname === '/delete_process') {
+        var body = '';
+        request.on('data', function(data) {
+            body = body + data;
+        });
+        request.on('end', function() {
+            var post = qs.parse(body);
+            var id = post.id;
+
+            fs.unlink(`data/${id}`, function(err) {
+                response.writeHead(302, {Location: `/`});
+                response.end('');
+            });
+         });
     } else {
         response.writeHead(404);
         response.end('Not found!!!');
