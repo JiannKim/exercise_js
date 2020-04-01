@@ -23,7 +23,6 @@ var app = http.createServer(function (request, response) {
                 `);
                 response.writeHead(200);
                 response.end(html);
-
                 /*
                 var list = templateList(filelist);
                 var template = templateHTML(title, list, `
@@ -37,11 +36,12 @@ var app = http.createServer(function (request, response) {
         } else {
             fs.readdir('./data', function (err, filelist) {
                 var filteredId = path.parse(queryData.id).base;
-                var filteredId = path.parse(queryData.id).base;
             fs.readFile(`data/${filteredId}`, 'utf8', function (err, description) {
                 var title = queryData.id;
                 var sanitizedTitle = sanitizeHtml(title);
-                var sinitizedDescription = sanitizeHtml(description);
+                var sinitizedDescription = sanitizeHtml(description, {
+                    allowedTags: ['h2', 'b']
+                });
                 var list = template.list(filelist);
                 var html = template.HTML(sanitizedTitle, list, `
                 <h2>${sanitizedTitle}</h2>${sinitizedDescription}`,
@@ -80,7 +80,7 @@ var app = http.createServer(function (request, response) {
             var post = qs.parse(body);
             var title = post.title;
             var description = post.description;
-            fs.writeFile(`data/${title}`, description, 'utf8', function(err) {
+            fs.writeFile(`data/${title}`, description, 'utf8', function(err, description) {
                 response.writeHead(302, {Location: `/?id=${title}`});
                 response.end('success');
             })
@@ -143,5 +143,6 @@ var app = http.createServer(function (request, response) {
     };
 
 });
+
 app.listen(3000);
 
