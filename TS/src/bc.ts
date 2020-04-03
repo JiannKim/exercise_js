@@ -45,14 +45,25 @@ const getNewTimeStamp = () : number => Math.round(new Date().getTime()/1000);
 const createNewBlock = (data:string): Block => {
     const previousBlock : Block = getLatestBlock();
     const newIndex : number = previousBlock.index + 1;
-    const nextTimestamp : number = getNewTimeStamp(); 
-    const nextHash : string = Block.calculateBlockHash
-        (
+    const newTimestamp : number = getNewTimeStamp(); 
+    const newHash : string = Block.calculateBlockHash
+    (
         newIndex,
         previousBlock.hash, 
-        nextTimestamp,
+        newTimestamp,
         data
-        );
-}
+    );
+    const newBlock : Block = new Block
+    (
+        newIndex, 
+        newHash, 
+        previousBlock.hash, 
+        data, 
+        newTimestamp
+    );
+    return newBlock;
+};
+
+console.log(createNewBlock("hello"), createNewBlock("bye bye"));
 
 export {};

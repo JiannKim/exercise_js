@@ -14,7 +14,17 @@ Block.calculateBlockHash = (index, previousHash, timestamp, data) => CrytoJs.SHA
 const genesisBlock = new Block(0, "10101010", "", "Hello~", 123456);
 let blockchain = [genesisBlock];
 // console.log(blockchain);
+//블록체인이 무엇인지 학습
 const getBlockChain = () => blockchain;
 const getLatestBlock = () => blockchain[blockchain.length - 1];
 const getNewTimeStamp = () => Math.round(new Date().getTime() / 1000);
+const createNewBlock = (data) => {
+    const previousBlock = getLatestBlock();
+    const newIndex = previousBlock.index + 1;
+    const newTimestamp = getNewTimeStamp();
+    const newHash = Block.calculateBlockHash(newIndex, previousBlock.hash, newTimestamp, data);
+    const newBlock = new Block(newIndex, newHash, previousBlock.hash, data, newTimestamp);
+    return newBlock;
+};
+console.log(createNewBlock("hello"), createNewBlock("bye bye"));
 //# sourceMappingURL=bc.js.map
