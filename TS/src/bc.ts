@@ -34,6 +34,7 @@ const genesisBlock: Block = new Block(0, "10101010", "", "Hello~", 123456);
 let blockchain: Block[] = [genesisBlock];
 
 // console.log(blockchain);
+//블록체인이 무엇인지 학습
 
 const getBlockChain = () : Block[] =>blockchain;
 
