@@ -81,7 +81,7 @@ const getHashforBlock = (aBlock: Block) : string => Block.calculateBlockHash
 
 const isBlockValid = (
     candidateBlock: Block,
-    preniousBlock: Block
+    previousBlock: Block
 ): boolean => {
     if(!Block.validateStructure(candidateBlock)) {
         return false;
@@ -93,6 +93,12 @@ const isBlockValid = (
         return false;
     } else {
         return true;
+    }
+};
+
+const addBlock = (candidateBlock: Block) : void => {
+    if (isBlockValid(candidateBlock, getLatestBlock())) {
+        blockchain.push(candidateBlock);
     }
 };
 
