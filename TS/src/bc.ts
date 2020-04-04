@@ -71,6 +71,14 @@ const createNewBlock = (data:string): Block => {
     return newBlock;
 };
 
+const getHashforBlock = (aBlock: Block) : string => Block.calculateBlockHash
+    (
+        aBlock.index,
+        aBlock.previousHash, 
+        aBlock.timestamp, 
+        aBlock.data
+    )
+
 const isBlockValid = (
     candidateBlock: Block,
     preniousBlock: Block
@@ -81,7 +89,11 @@ const isBlockValid = (
         return false;
     } else if (previousBlock.hash !== candidateBlock.previousHash) {
         return false;
-    } else if (pre)
+    } else if (getHashforBlock(candidateBlock) !== candidateBlock.hash) {
+        return false;
+    } else {
+        return true;
+    }
 };
 
 console.log(createNewBlock("hello"), createNewBlock("bye bye"));
