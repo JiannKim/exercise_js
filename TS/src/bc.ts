@@ -108,5 +108,6 @@ createNewBlock("third block");
 createNewBlock("fourth block");
 
 console.log(blockchain);
+//1/1 commit 
 
 export {};
